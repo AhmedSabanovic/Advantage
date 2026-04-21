@@ -325,15 +325,15 @@ $(function () {
             return;
         }
 
-        for (var i = 0; i < revealTargets.length; i++) {
-            revealTargets[i].classList.add('reveal-on-scroll');
-        }
+        revealTargets.forEach(function (target) {
+            target.classList.add('reveal-on-scroll');
+        });
 
         var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-            for (var j = 0; j < revealTargets.length; j++) {
-                revealTargets[j].classList.add('is-visible');
-            }
+            revealTargets.forEach(function (target) {
+                target.classList.add('is-visible');
+            });
             return;
         }
 
@@ -349,9 +349,9 @@ $(function () {
             rootMargin: '0px 0px -30px 0px'
         });
 
-        for (var k = 0; k < revealTargets.length; k++) {
-            revealObserver.observe(revealTargets[k]);
-        }
+        revealTargets.forEach(function (target) {
+            revealObserver.observe(target);
+        });
      })();
 
 

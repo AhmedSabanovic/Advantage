@@ -1368,7 +1368,7 @@ p {
     max-width: 58ch;
 }
 
-/* Layout fix: keep the first hero image proportional and contained on all screens. */
+/* Layout fix: Keep the first hero image proportional and contained on all screens. */
 .banner_img {
     width: 100%;
     max-width: 540px;
