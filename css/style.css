@@ -277,7 +277,8 @@ a.navbar-brand {
 
 .navbar-brand img {
     display: block;
-    background-color: #ffffff;
+    background: linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
+    border: 2px solid rgba(0, 20, 49, 0.35);
     border-radius: 10px;
     padding: 6px 10px;
     box-shadow: 0 6px 14px rgba(0, 20, 49, 0.28);
