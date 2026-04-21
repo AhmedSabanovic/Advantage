@@ -275,6 +275,14 @@ a.navbar-brand {
     width: 14%;
 }
 
+.navbar-brand img {
+    display: block;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 6px 10px;
+    box-shadow: 0 6px 14px rgba(0, 20, 49, 0.28);
+}
+
 .navbar {
     padding: 15px 15px;
 }
