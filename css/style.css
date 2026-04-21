@@ -1278,3 +1278,267 @@ textarea#comment::placeholder {
 .margin_top90 {
     margin-top: 90px;
 }
+
+/* ---------------------------------------------------------------------
+   Modern redesign layer
+   - cohesive blue palette
+   - improved hierarchy/spacing
+   - preserved existing behavior with enhanced visual polish
+------------------------------------------------------------------------ */
+
+:root {
+    --blue-primary: #0f4cbb;
+    --blue-secondary: #1e66d0;
+    --blue-accent: #63a3ff;
+    --blue-deep: #0b1f4f;
+    --surface: #f5f8ff;
+    --surface-card: #ffffff;
+    --text-primary: #0f172a;
+    --text-muted: #3f4f6b;
+    --border-soft: #d4def1;
+    --shadow-soft: 0 12px 36px rgba(15, 76, 187, 0.12);
+    --shadow-hover: 0 18px 42px rgba(15, 76, 187, 0.2);
+}
+
+body {
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+}
+
+p {
+    color: var(--text-muted);
+    line-height: 1.75;
+}
+
+.layout_padding {
+    padding-top: 88px;
+}
+
+.header_section {
+    background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-primary) 55%, var(--blue-secondary) 100%);
+}
+
+.navbar {
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(8px);
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    color: #f8fbff;
+    font-weight: 700;
+    letter-spacing: .02em;
+    padding: 8px 12px;
+    border-radius: 999px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.banner_section {
+    padding: 88px 0px 112px;
+}
+
+.banner_taital {
+    font-size: clamp(2rem, 4.5vw, 3.8rem);
+    letter-spacing: .01em;
+}
+
+.banner_text {
+    color: rgba(248, 251, 255, 0.95);
+    font-size: 1.05rem;
+    max-width: 58ch;
+}
+
+/* Layout fix: Keep the first hero image proportional and contained on all screens. */
+.banner_img {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    animation: subtleFloat 6s ease-in-out infinite;
+}
+
+.banner_img img {
+    display: block;
+    width: min(100%, 540px);
+    height: auto;
+    object-fit: contain;
+}
+
+@keyframes subtleFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.started_bt a,
+.readmore_btn a,
+.readmore_button a,
+.readmore_bt a,
+.send_bt a,
+.read_bt a {
+    background: linear-gradient(135deg, var(--blue-primary), var(--blue-secondary));
+    color: #ffffff;
+    border: 1px solid transparent;
+    box-shadow: 0 10px 24px rgba(15, 76, 187, 0.25);
+}
+
+.started_bt a:hover,
+.readmore_btn a:hover,
+.readmore_button a:hover,
+.readmore_bt a:hover,
+.send_bt a:hover,
+.read_bt a:hover {
+    background: linear-gradient(135deg, var(--blue-secondary), var(--blue-accent));
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.started_bt a:focus-visible,
+.readmore_btn a:focus-visible,
+.readmore_button a:focus-visible,
+.readmore_bt a:focus-visible,
+.send_bt a:focus-visible,
+.read_bt a:focus-visible,
+.navbar-light .navbar-nav .nav-link:focus-visible {
+    outline: 3px solid rgba(99, 163, 255, 0.65);
+    outline-offset: 2px;
+}
+
+.services_section_2 {
+    background: linear-gradient(180deg, #f9fbff 0%, #eef4ff 100%);
+}
+
+.service_box {
+    background: var(--surface-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    padding: 32px 24px;
+    min-height: 100%;
+}
+
+.service_box:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.corporate_text,
+p.chunks_text,
+.studies_taital,
+.customer_taital,
+.news_taital,
+.does_taital,
+.contact_taital {
+    color: var(--blue-deep);
+}
+
+.about_section {
+    background: linear-gradient(150deg, #0a1b47 0%, #153579 52%, #224ea1 100%);
+}
+
+.about_taital,
+.about_text {
+    color: #f4f8ff;
+}
+
+.about_text_main {
+    padding: 72px 0;
+}
+
+.about_img,
+.about2_img {
+    margin-top: 70px;
+}
+
+.contact_section_2 {
+    width: min(760px, 100%);
+}
+
+.mail_section {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-soft);
+    padding: 26px;
+}
+
+.mail_text,
+.massage-bt {
+    color: var(--text-primary);
+    border-bottom: 1px solid #b3c1de !important;
+}
+
+.mail_text:focus,
+.massage-bt:focus {
+    border-bottom-color: var(--blue-primary) !important;
+}
+
+.footer_section {
+    background: linear-gradient(135deg, #0f4cbb 0%, #1c66d0 55%, #63a3ff 100%);
+}
+
+.social_icon li a,
+.location_text li a {
+    transition: transform .25s ease, background-color .25s ease, color .25s ease;
+}
+
+.social_icon li a:hover,
+.location_text li a:hover {
+    transform: translateY(-2px);
+}
+
+.copyright_section {
+    background-color: #071739;
+}
+
+.copyright_text {
+    color: #d7e6ff;
+}
+
+/* Animation enhancement with accessibility fallback. */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .banner_img {
+        animation: none;
+    }
+    .reveal-on-scroll,
+    .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

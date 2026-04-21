@@ -317,5 +317,42 @@ $(function () {
         interval: 5000
      });
 
+     /* Scroll reveal microinteractions
+     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+     (function () {
+        var revealTargets = document.querySelectorAll('.services_section, .services_section_2, .about_section, .contact_section, .footer_section, .service_box');
+        if (!revealTargets.length) {
+            return;
+        }
+
+        revealTargets.forEach(function (target) {
+            target.classList.add('reveal-on-scroll');
+        });
+
+        var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+            revealTargets.forEach(function (target) {
+                target.classList.add('is-visible');
+            });
+            return;
+        }
+
+        var revealObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealTargets.forEach(function (target) {
+            revealObserver.observe(target);
+        });
+     })();
+
 
 });
